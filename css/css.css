@@ -1,0 +1,281 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;	
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body{
+	/*tipo de letra*/
+	font-family: 'Open Sans', sans-serif;
+	background: #000 url('../imagenes/fondo11.jpg');
+	/*para que la imagen abarque el 100% de la pagina*/
+	background-size:cover;
+	/*para que no se repita la imagen*/
+	background-attachment: fixed;
+}
+
+/*contenedor padre de cada uno de los elementos como header, main, footer etc*/
+.contenedor{
+	margin: auto;
+	width: 90%;
+	max-width: 1200px;
+	/*cosas para auto ajustar*/
+	display: flex;
+	flex-direction: row;
+	/*soluciona los erroes de posicion*/
+	flex-wrap: wrap;
+}
+/*elemento padre del .menu*/
+header{
+	width: 100%;
+	padding:10px 0;
+	/*para aplicar flexbox a los hijos */
+	display: flex;
+	/*para que un elemento se ponga a un lado del otro*/
+	flex-direction: row;
+	/*acomodar*/
+	justify-content: space-between;
+	/*centrar una linea de elelmentos*/
+	align-items:center ;
+
+}
+/*tamanio de la imagen*/
+.logo img{
+	height: 200px;
+}
+/*elemento hijo del header*/
+/*formatos para las palabras*/
+header .menu a {
+	font-weight: bold;
+	color: #3F4DC2;
+	text-decoration: none;
+	margin-right: 40px;
+	font-size: 18px;
+}
+
+header .menu a:hover {
+text-decoration: underline;
+}
+
+.main{
+	background:#fff;
+	/*padding: 20px;*/
+	width: 80%;
+	
+}
+/*estilos para las pestanias */
+.wrap{
+	max-width: 100%;
+}
+
+ul.tabs{
+	width: 100%;
+	
+	background:#537dca;
+	list-style: none;
+	display: flex;
+}
+
+ul.tabs li{
+	width: 18%;
+}
+
+ul.tabs li a{
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	text-align: center;
+	display: block;
+	padding: 20px 0px;
+	font-weight: bold;
+	border-left:1px solid rgba(255,255,255,.25);
+}
+
+.active{
+	background:#4264ae;
+}
+
+ul.tabs li a .tab-text{
+	margin-left: 8px;
+}
+
+.secciones{
+	width: 100%;
+	background: #fff;
+}
+
+.secciones article{
+	padding: 30px 15px ;
+}
+
+.secciones article p{
+	text-align: justify;
+}
+
+
+/*
+.main article p{
+	margin-bottom: 20px;
+	font-size: 14;
+
+	line-height: 19px;
+	text-align: justify;
+}
+*/
+.main article h2{
+	margin-bottom: 20px;
+	font-size: 25px;
+	text-align: center;
+}
+
+
+/*contenedor padrel aside*/
+aside {
+	width: 20%;
+	background:#537dca;
+	padding: 20px;
+	display: flex;
+	/*pone el espacio sobrante en medio de los dos contenedores hijo*/
+	justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	/*soluciona los erroes de posicion*/
+	flex-wrap: wrap;
+}
+
+
+
+aside .cajas{
+	width: 100%;
+	font-size: 18px;
+	text-align: center;
+	color:#fff;
+	padding: 50px 0;
+	background:#4264ae;
+	font-weight: bold;
+}
+
+aside .cajas .formulario{
+	width: 100%;
+	
+}
+.formulario input[type="radio"]{
+	/*quitar las bolitas negras*/
+	display: none;
+}
+.formulario input[type="text"]{
+	/*para que abarquen el 100% del tamanio y se ponga uno abajo del otro*/
+	display: block;
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 15px 10px;
+	/*para quitar el borde cuando se selecciona*/
+	outline: none;
+	border: none;
+	border-bottom: 2px solid #ccc;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+}
+
+.formulario input[type="text"]:focus{
+	border-bottom:2px solid #000;
+}
+
+/*aplicar flexbox*/
+.formulario .calculos{
+	display: flex;
+	/*para ponerlos en renglones distintos*/
+	flex-wrap: wrap;
+	/*el espacio sobrante se divide entre los elementos*/
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.formulario .label-radio{
+	background: #4264ae;
+	color: #fff;
+	padding: 10px;
+	text-align: center;
+	width: 100%;
+}
+.formulario .label-radio:hover{
+	cursor: pointer;
+}
+/*cuando se seleccione alguno de los dos componenetes del radio*/
+.formulario input[type="radio"]:checked + .label-radio{
+	background: #2C4AB1;
+}
+
+
+
+
+
+footer{
+	margin:20px 0;
+	background: rgba(255,255,255,.2);
+	padding: 20px;
+	width: 100%;
+	color:#fff;
+	display: flex;
+	flex-direction: row;
+	/*en este caso no ocupamos solucionar los erroes de posicion*/
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+/*fortmato para la tabla*/
+.secciones .tab22 p{
+	width:100%;
+	overflow: hidden;
+	text-align: center;
+	align-items: center;
+	align-content: center;
+
+}
+.secciones article {
+	align-items: center;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	/*soluciona los erroes de posicion*/
+	flex-wrap: wrap;
+}
+
+table {
+	font-family: arial, sans-serif;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid #dddddd;
+	text-align: center;
+	padding: 8px;
+}
+
+tr:nth-child(even) {
+	background-color: #dddddd;
+}
+
+.formulario .btn{
+	width: 100%;
+	text-align: center;
+	background: #4264ae;
+	color: #fff;
+	border: none;
+	/*para poder dar padding*/
+	display: block;
+	padding:15px 10px;
+	cursor: pointer;
+	font-size: 18px;
+	/*para quitar el borde cuando se selecciona*/
+	outline: none;
+	font-weight: bold;
+}
+.formulario .btn:hover{
+	background:#2C4AB1;
+}
+
+.si{
+	border: 1px solid #fff;
+}

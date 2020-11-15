@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Portada</title>
+	<link rel="stylesheet" type="text/css" href="css/css.css">
+
+
+</head>
+<body>
+	<div class="contenedor">
+		
+		<header>
+			<!--imagen del logo-->
+			<div class="logo">
+				<img src="imagenes/tec2.png">
+			</div>
+			<!--lista-->
+			<nav class="menu">
+				<a href="index2.html" >Jugar</a>
+				<a href="https://www.culiacan.tecnm.mx/" target="_blank">Tec</a>
+				<a href="https://m.itculiacan.edu.mx/login/index.php" target="_blank">Plataforma</a>
+			</nav>
+		</header>
+
+		<section class="main">
+			<!--para mostrar todo-->
+			<article>
+				<div class="wrap">
+					<ul class="tabs">
+						<li><a href="#tab1">Solucion</a></li>
+						<li><a href="#tab2">Torneo/Ruleta</a></li>
+						<li><a href="#tab3">un punto</a></li>
+						<li><a href="#tab4">Poblacion 2</a></li>
+						<li><a href="#tab5">Mutacion 1</a></li>
+						<li><a href="#tab6">Mutacion 2</a></li>
+					</ul>
+			
+					<div class="secciones">
+						<article id="tab1">
+							<p>solucion simple</p>
+						</article>
+
+						<article id="tab2" class="tab22">
+							<p id="TS">
+								<table >
+									<tr>
+										<td colspan=3>P</td>
+										<td colspan=2>Torneo</td>
+										<td colspan=4>Selección por Ruleta</td>
+									</tr>
+									<tr>
+										<td>No.Individuos</td><td>cromosomas</td><td>aptitud</td><td>I.J.Torneo</td><td>ganadores</td><td>Valor estimado</td><td>suma aptitudes</td><td>  r  </td><td>Seleccionados</td>
+									</tr>
+									<tbody id="tbodyid">
+
+
+									</tbody>
+									<tr>
+										<td class="si" colspan=2></td>
+										<td >valor promedio</td>
+										<td class="si" colspan=2></td>
+										<td >suma del valor estimado</td>
+									</tr>
+								</table>
+							</p>
+						</article>
+
+						<article id="tab3">
+							<p>TABLA 3</p>
+						</article>
+
+						<article id="tab4">
+						<p>TABLA 4</p>
+						</article>
+
+						<article id="tab5">
+						<p>TABLA 5</p>
+						</article>
+
+						<article id="tab6">
+						<p>TABLA 6</p>
+						</article>
+					</div>
+				</div>
+
+			</article>
+		</section>
+
+		<aside>
+			<div class="cajas">
+				<form class="formulario" id="formularioid" name="formulario">
+					<div class="contenedor-inputs">
+						<input type="text" name="numero" id="numeroid" placeholder="numero de individuos">
+						<input type="text" name="numero" placeholder="Coste finca 1">
+						<input type="text" name="numero" placeholder="Coste finca 2">
+						<input type="text" name="numero" placeholder="Coste finca 3">
+						<input type="text" name="numero" placeholder="Coste finca 4">
+						<input type="text" name="numero" placeholder="Coste finca 5">
+						<!--aqui voy a crear una clase padre para usar flexbox en los botones tipo radio-->
+						<div class="calculos">
+							<input type="radio" name="calculos" id="poblacionid" value="poblacion">
+							<label class="label-radio hombre" for="poblacionid">Usar poblacion</label>
+		
+							<input type="radio" name="calculos" id="mutacionid" value="mutacion">
+							<label class="label-radio mutacion" for="mutacionid">Usar mutacion</label>
+
+							<input type="radio" name="calculos" id="ambosid" value="ambos">
+							<label class="label-radio ambos" for="ambosid">Usar ambos</label>
+						</div>
+		
+						<!--tabla desordenada-->
+						<ul class="error" id="errorid">
+							<!--los elementos li los vamos a agregar con javascript-->
+						</ul>
+					</div>
+		
+					<!--el boton-->
+					<input type="button" class="btn" id="btnid" value="resolver">
+				</form>
+				
+			</div>
+		</aside>
+
+		<footer>
+			<div class="maestra">
+				<p>NORA ESMERALDA CANCELA GARCIA</p>
+			</div>
+		</footer>
+
+
+	</div>
+	<script src="funciones/jquery.min.js"></script>
+	<script src="funciones/codigo.js"></script>
+	<script src="funciones/TorneoRuleta.js"></script>
+	<script src="funciones/tabla.js"></script>
+
+</body>
+</html>
