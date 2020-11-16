@@ -34,9 +34,15 @@ for (var i = 0; i < numFila; i++) {
   codigoHTML+="<tr>";
   x++;
   for (var j = 0; j < numColumnas; j++) {
-    codigoHTML+="<td>"+x+"</td>"+ "<td>"+muestra[i]+"</td>" +"<td>"+suma2[i]+"</td>" +"<td>"+invalea[i]+"</td>"+"<td>"+ganador[i]+"</td>"+"<!--celda-->";
+    codigoHTML+="<td>"+x+"</td>"+ "<td>"+muestra[i]+"</td>" +"<td>"+suma2[i]+"</td>" +"<td>"+invalea[i]+"</td>"+"<td>"+ganador[i]+"</td>"+"<td>"+valestimado[i].toFixed(2)+"</td>"+"<!--celda-->";
   }
   codigoHTML+="</tr>";
 }
 document.getElementById("tbodyid").innerHTML = codigoHTML;
+var codigoHTML="";
+codigoHTML+="<td class=si colspan=2>"+"</td>";
+codigoHTML+="<td>"+promedioP2.toFixed(2)+"</td>";
+codigoHTML+="<td class=si colspan=2>"+"</td>";
+codigoHTML+="<td>"+"suma del valor estimado"+"</td>";
+document.getElementById("tablaPromedio").innerHTML = codigoHTML;
 }

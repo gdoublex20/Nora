@@ -25,6 +25,14 @@
     var ganador=[];
     /*validar si se repite*/
     var repetir=0;
+    /*validar si se repite el invitado*/
+    var invirepetido=0;
+    /*promedioP1*/
+    var promedioP1 =0;
+    /*promedioP2*/
+    var promedioP2=0;
+    /*valor estimado*/
+    var valestimado=[];
 
     function TorneoRuleta() {
    /*numero filas--SE OCUPA EJECUTAR*/
@@ -33,7 +41,7 @@
             /*for para llenar la muestra entra varias mas cosas*/
             for(var j = 0; j < numFilas; j++) {
                 muestra[j]=[];
-                /*llenar invalea*/
+                /*llenar invitado aleatorio*/
                 invalea[j]=[];
                 do{
                     repetir=0;
@@ -45,11 +53,27 @@
 
                         /*para llenar los invitados que juegan el torneo  */
                         if(i<2){
-                            /*sacar el numero aleatorio entre los jugadores*/
+                            if(i==0){
+                        /*sacar el numero aleatorio entre los jugadores*/
                         var raninvalea=Math.round((Math.random() * ((numFilas)-1))+1);
                         /*console.log(raninvalea);*/
                         /*llenar la matriz de los jugadores aleatorios*/
-                        invalea[j][i] = raninvalea;
+                        invalea[j] [i] = raninvalea;
+                            }
+                            if(i==1){
+                                do{
+                                   /* console.log("entra");*/
+                                    invirepetido=0;
+                                    var raninvalea=Math.round((Math.random() * ((numFilas)-1))+1);
+                                    invalea[j][i] = raninvalea;
+
+                                    if(invalea[j][i-1]==invalea[j][i]){
+                                       /* console.log("esta repetido");*/
+                                        invirepetido++;
+                                    }
+                                }while(invirepetido>0);
+                            }
+                        
                         }
                     } 
                     /*arreglo para hacer que no se repitan los valores de la muestra*/
@@ -60,7 +84,8 @@
                             repetir++;
                         }
                         /* para ver si esta bien*/
-                        console.log("muestra A: "+muesA+" muestra Z: "+muestra[z]+" = "+(JSON.stringify(muestra[z])== JSON.stringify(muesA)));
+                        /*console.log("muestra A: "+muesA+" muestra Z: "+muestra[z]+" = "+(JSON.stringify(muestra[z])== JSON.stringify(muesA)));
+                        */
                     }
                 }while(repetir>1);
                 
@@ -69,18 +94,24 @@
         
         /*console.log(muestra);*/
         /*--------------------AMPLITUD--------------------*/ 
+        promedioP1=0;
+        promedioP2=0;
        for(var j = 0; j < numFilas; j++) {
+            x=0;
             /*para sumar lo que valen las fincas con ayuda de la muestra*/
             for(var i = 0; i < 5; i++) {
+                /*cantidad de unos*/
                suma= suma+muestra[j][i];
+               /*para sumas las fincas*/
                if(muestra[j][i]==1){
+                   /*para saber que finca sumar*/
                    x=x+fincas[i];
                }
-
             }
             /*ya tengo la suma de las fincas*/
+            /*console.log(x);*/
             suma2[j]=x;
-            x=0;
+            
             /*primera regla*/
             if(suma!=3 ){
                     suma2[j]=suma2[j]+18;
@@ -93,7 +124,12 @@
                     suma2[j]=suma2[j]+8;
                 }
                 /*console.log(muestra[j]);*/
-           }
+                promedioP1=promedioP1+suma2[j];
+        }
+           
+           promedioP2=promedioP1/numFilas;
+           console.log(promedioP1);
+           console.log(promedioP2);
            /*
            console.log(suma2);
            console.log(fincas);
@@ -102,21 +138,19 @@
            
            /*para checar los ganadores en base al valor*/
            for(var j = 0; j < numFilas; j++) {
-            for(var i = 0; i < 5; i++) {
-                if(i<1){
-                    if(suma[(invalea[j][i]-1)]==suma[(invalea[j][i+1]-1)]){
-                        ganador[j]=(invalea[j][i]);
-                    }else if(suma[(invalea[j][i]-1)]>suma[(invalea[j][i+1]-1)]){
-                        ganador[j]=(invalea[j][i+1]);
-                    }else{
-                        ganador[j]=(invalea[j][i]);
+                for(var i = 0; i < 5; i++) {
+                    /*para comparar solo los primeros 2 invitados*/
+                    if(i<1){
+                        if(suma[(invalea[j][i]-1)]>suma[(invalea[j][i+1]-1)]){
+                            ganador[j]=(invalea[j][i+1]);
+                        }else{
+                            ganador[j]=(invalea[j][i]);
+                        }           
                     }
-
-                
-                }
-            } 
-            
-        }
+                } 
+                /*sacar el valor estimado*/
+                valestimado[j]=(suma2[j]/promedioP2);
+            }
 
         }
 
