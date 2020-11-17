@@ -60,7 +60,7 @@
                     for(var i = 0; i < 5; i++) {
                         var ranMuestra = Math.round(Math.random())>0.5 ? 0 : 1;/*el if para llenar la muestra*/
                         /*llenar la muestra*/
-                        muestra[j][i]=ranMuestra;
+                        muestra[j][i]=ranMuestra;/*--------------------------------El arreglo con las muestras-------------usar este-------------------*/
                         /*console.log(ranMuestra);*/
 
                         /*para llenar los invitados que juegan el torneo  */
