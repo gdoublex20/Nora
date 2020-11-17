@@ -71,14 +71,13 @@ text-decoration: underline;
 
 ul.tabs{
 	width: 100%;
-	
 	background:#537dca;
 	list-style: none;
 	display: flex;
 }
 
 ul.tabs li{
-	width: 18%;
+	width: 25%;
 }
 
 ul.tabs li a{
