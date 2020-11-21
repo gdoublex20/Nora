@@ -42,8 +42,12 @@ for (var i = 0; i < numFila; i++) {
 }
 
     codigoHTML+="<td>"+(i+1)+"</td>"+ "<td>"+muestra[i]+"</td>" +"<td>"+suma2[i]+"</td>" +"<td>"+invalea[i]+"</td>"+"<td>"+ganador[i]+"</td>"+"<td>"+valestimado[i].toFixed(2)+"</td>"+"<td>"+sumvalestimado[i].toFixed(2)+"</td>"+"<td>"+r[i]+"</td>" +"<td>"+seleccionados[i]+"</td>" +"<!--celda-->";
+    if(PuntoCruza[i]==0){
+      codigoHTML2+="<td>"+(i+1)+"</td>"+"<td>"+poblacionseleccionada[i]+"</td>"+"<td >"+CruzaUnPunto1[i]+"</td>"+"<td >"+" "+"</td>";
+    }else{
+      codigoHTML2+="<td>"+(i+1)+"</td>"+"<td>"+poblacionseleccionada[i]+"</td>"+"<td >"+CruzaUnPunto1[i]+"</td>"+"<td >"+PuntoCruza[i]+"</td>";
+    }
     
-    codigoHTML2+="<td>"+(i+1)+"</td>"+"<td>"+poblacionseleccionada[i]+"</td>"+"<td >"+CruzaUnPunto1[i]+"</td>"+"<td >"+PuntoCruza[i]+"</td>";
 
   codigoHTML+="</tr>";
   codigoHTML2+="</tr>";
