@@ -252,7 +252,7 @@ td, th {
 	padding: 8px;
 }
 
-tr:nth-child(even) {
+.tb2:nth-child(even) {
 	background-color: #dddddd;
 }
 
@@ -277,4 +277,13 @@ tr:nth-child(even) {
 
 .si{
 	border: 1px solid #fff;
+}
+
+.tt{
+	background-color: #fff;
+	border-top:3px solid #000;
+}
+
+.ff{
+	background-color: #dddddd;
 }
