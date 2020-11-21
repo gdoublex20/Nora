@@ -61,7 +61,7 @@
                         var ranMuestra = Math.round(Math.random())>0.5 ? 0 : 1;/*el if para llenar la muestra*/
                         /*llenar la muestra*/
                         muestra[j][i]=ranMuestra;/*--------------------------------El arreglo con las muestras-------------usar este-------------------*/
-                        /*console.log(ranMuestra);*/
+                       /* console.log(muestra);*/
 
                         /*para llenar los invitados que juegan el torneo  */
                         if(i<2){
@@ -195,7 +195,8 @@
         }
 
         function resolver(){
-            TorneoRuleta()
+            TorneoRuleta();
+            CruzaUnPunto();
             tabla();
         }
          
