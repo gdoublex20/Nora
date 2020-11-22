@@ -4,7 +4,6 @@
    var poblacionseleccionadaDos = [];
    var poblacioncruzaunpuntoDos = [];
    
-   /*aparte*/
    var poblacionseleccionadaDos2 = [];
    var CruzaUnPuntoDos1 = [];
    var PuntoCruzaDos = [];
@@ -18,34 +17,22 @@
    var poblacionseleccionadaDos6 = [];
 
 
-function CruzaDosPuntos (){
+function CruzaDosPuntos () {
  
-    
-    
     var numFilas=parseInt(document.getElementById("numeroid").value); 
     for(var f = 0; f< numFilas; f++)
     {
      for(var c = 0; c < 5; c++)
      {
-        
-        /*console.log("hakiando el planeta");*/
+        //doble poblacion seleccionada
         poblacionseleccionadaDos[f] = muestra[seleccionados[f]-1];
         poblacionseleccionadaDos2[f] = muestra[seleccionados[f]-1];
      }
     }
-    
-    //Select a random crossover point
+    //el punto de cruza y cuales se van a cruzar
     PuntodeCruzaDos = Math.round(Math.random() * 4) + 1  
-    /*
-    console.log("hakiando el planetaaaaa", PuntodeCruzaDos);
-    console.log("otra población ",poblacioncruzaunpuntoDos);
-    console.log("CruzaUnPuntoDos ",muestra);
-    console.log(seleccionados);
-    console.log("Población Seleccionada",poblacionseleccionadaDos);
-    */
        for(var f = 0; f< numFilas; f++)
        {
-             
              var si = Math.round(Math.random())>0.5 ? true : false;
 
              if(si==true){
@@ -134,7 +121,7 @@ function CruzaDosPuntos (){
              }
 
     
-             
+             //juntarlos todos
              for(var f = 0; f< numFilas; f++)
              {
                 if(CruzaUnPuntoDos1[f]==true){
