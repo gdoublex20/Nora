@@ -2,11 +2,14 @@ var i, j, s, x, y, PuntodeCruza;
 x=0, y=0, PuntodeCruza=0;
 var poblacionseleccionada = [];
 var poblacioncruzaunpunto = [];
+
 /*aparte*/
 var poblacionseleccionada2 = [];
 var CruzaUnPunto1 = [];
 var PuntoCruza = [];
 var u=0;
+var poblacionseleccionada3 = [];
+var poblacionseleccionada4 = [];
 
 function CruzaUnPunto () 
 {
@@ -24,12 +27,13 @@ for(var f = 0; f< numFilas; f++)
 
 //Select a random crossover point
 PuntoDeCruza = Math.round(Math.random() * 4) + 1  
+/*
 console.log("hakiando el planetaaaaa", PuntoDeCruza);
 console.log("otra población ",poblacioncruzaunpunto);
 console.log("CruzaUnPunto ",muestra);
 console.log(seleccionados);
 console.log("Población Seleccionada",poblacionseleccionada);
-
+*/
    for(var f = 0; f< numFilas; f++)
    {
          
@@ -38,7 +42,7 @@ console.log("Población Seleccionada",poblacionseleccionada);
          CruzaUnPunto1[f]=si;
          CruzaUnPunto1[f+1]=si;
          
-         u=Math.round(Math.random() * 4) + 1  ;
+         u=Math.round(Math.random() * 3) + 1  ;
          PuntoCruza[f]=u;
          PuntoCruza[f+1]=u;
          f++;
@@ -50,9 +54,57 @@ console.log("Población Seleccionada",poblacionseleccionada);
          f++;
          }
 
-   }
-/*ya les deje algunas cosas extras para que sea mas visual, ya solo falta la otra mitad, ustedes pueden :3 */
+   }  
+   var x=0;
+   var k=1;
+   do{
+      
+      if(CruzaUnPunto1[x]==true){
+         
+         poblacionseleccionada2[x]=poblacionseleccionada[k].slice((PuntoCruza[x]),5)
+         poblacionseleccionada2[k]=poblacionseleccionada[x].slice((PuntoCruza[x]),5)
+      }else{
+         poblacionseleccionada2[x]=poblacionseleccionada[x];
+         poblacionseleccionada2[k]=poblacionseleccionada[k];
+      }
+      x=x+2;
+      k=k+2;
+      }while(x<numFilas);
+      /*
+      var x=0;
+      var k=1;
+      do{
+         
+         if(CruzaUnPunto1[x]==true){
+            
+            poblacionseleccionada3[x]=poblacionseleccionada[k].slice(0,(PuntoCruza[x]))
+            poblacionseleccionada3[x]=poblacionseleccionada[x].slice(0,(PuntoCruza[x]))
+         }else{
+            poblacionseleccionada3[x]=poblacionseleccionada[x];
+            poblacionseleccionada3[k]=poblacionseleccionada[k];
+         }
+         x=x+2;
+         k=k+2;
+         }while(x<numFilas);
+         */
+         for(var f = 0; f< numFilas; f++)
+         {
+            if(CruzaUnPunto1[f]==true){
+            poblacionseleccionada3[f]=poblacionseleccionada[f].slice(0,(PuntoCruza[f]))
+            }else{
+               poblacionseleccionada3[f]=poblacionseleccionada[f];
+            }
+         }
 
-    
+
+         for(var f = 0; f< numFilas; f++)
+         {
+            if(CruzaUnPunto1[f]==true){
+            poblacionseleccionada4[f]=poblacionseleccionada3[f].concat(poblacionseleccionada2[f]);
+            }else{
+               poblacionseleccionada4[f]=poblacionseleccionada3[f];
+            }
+         }
+
 }
 
