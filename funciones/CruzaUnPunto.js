@@ -19,7 +19,8 @@ for(var f = 0; f< numFilas; f++)
 {
  for(var c = 0; c < 5; c++)
  {
-    console.log("hakiando el planeta");
+    
+    /*console.log("hakiando el planeta");*/
     poblacionseleccionada[f] = muestra[seleccionados[f]-1];
     poblacionseleccionada2[f] = muestra[seleccionados[f]-1];
  }
@@ -70,23 +71,7 @@ console.log("Población Seleccionada",poblacionseleccionada);
       x=x+2;
       k=k+2;
       }while(x<numFilas);
-      /*
-      var x=0;
-      var k=1;
-      do{
-         
-         if(CruzaUnPunto1[x]==true){
-            
-            poblacionseleccionada3[x]=poblacionseleccionada[k].slice(0,(PuntoCruza[x]))
-            poblacionseleccionada3[x]=poblacionseleccionada[x].slice(0,(PuntoCruza[x]))
-         }else{
-            poblacionseleccionada3[x]=poblacionseleccionada[x];
-            poblacionseleccionada3[k]=poblacionseleccionada[k];
-         }
-         x=x+2;
-         k=k+2;
-         }while(x<numFilas);
-         */
+
          for(var f = 0; f< numFilas; f++)
          {
             if(CruzaUnPunto1[f]==true){

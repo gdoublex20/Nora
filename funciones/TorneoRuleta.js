@@ -197,6 +197,10 @@
         function resolver(){
             TorneoRuleta();
             CruzaUnPunto();
+            CruzaDosPuntos();
             tabla();
+            
         }
+
+
          
