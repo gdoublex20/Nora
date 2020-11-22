@@ -7,7 +7,8 @@ function tabla(){
   var codigoHTML3="";
   var codigoHTML4="";
   var codigoHTML5="";
-  
+  var codigoHTML6="";
+  var codigoHTML7="";
   /*numero filas--SE OCUPA EJECUTAR*/
   var numFila=parseInt(document.getElementById("numeroid").value); 
 x=0;
@@ -32,6 +33,11 @@ if(paramutar[i]){
 }else{
   codigoHTML4+="<tr class=ff>";
 }
+if(paramutarDosPuntos[i]){
+  codigoHTML6+="<tr class=tt>";
+}else{
+  codigoHTML6+="<tr class=ff>";
+}
 
 
     //torneo ruleta 
@@ -48,7 +54,7 @@ if(paramutar[i]){
     }else{
       codigoHTML3+="<td>"+(i+1)+"</td>"+"<td>"+poblacionseleccionadaDos[i]+"</td>"+"<td >"+CruzaUnPuntoDos1[i]+"</td>"+"<td >"+PuntoCruzaDosDosDos[i]+"<td>"+poblacionseleccionadaDos4[i]+"</td>";
     }
-    //mutacion
+    //mutacion un punto
     if(paramutar[i]){
       codigoHTML4+=
       "<td>"+(i+1)+"</td>"+
@@ -63,16 +69,30 @@ if(paramutar[i]){
       "<td>"+" "+"</td>"+
       "<td>"+pobSemutacion[i]+"</td>";
     }
-    
-    
+    //mutacion dos puntos
+    if(paramutarDosPuntos[i]){
+      codigoHTML6+=
+      "<td>"+(i+1)+"</td>"+
+      "<td>"+pobSelecMutaDosPuntos[i]+"</td>"+
+      "<td>"+paramutarDosPuntos[i]+"</td>"+
+      "<td>"+(puntoParaMutarDosPunto[i]+1)+"</td>"+
+      "<td>"+pobSemutacionDosPuntos[i]+"</td>";
+    }else{
+      codigoHTML6+="<td>"+(i+1)+"</td>"+
+      "<td>"+pobSelecMutaDosPuntos[i]+"</td>"+
+      "<td>"+paramutarDosPuntos[i]+"</td>"+
+      "<td>"+" "+"</td>"+
+      "<td>"+pobSemutacionDosPuntos[i]+"</td>";
+    }
 
   codigoHTML+="</tr>";
   codigoHTML2+="</tr>";
   codigoHTML3+="</tr>";
   codigoHTML4+="</tr>";
+  codigoHTML6+="</tr>";
 }
 
-
+//Solucion 1
   codigoHTML5+="<tr class=tb2>";
   codigoHTML5+="<td>"+"El mejor caso"+"</td>"+"<td>"+posmin+"</td>"+"<td>"+min+"</td>";
   codigoHTML5+="</tr>";
@@ -80,6 +100,14 @@ if(paramutar[i]){
   codigoHTML5+="<td>"+"El peor caso"+"</td>"+"<td>"+posmax+"</td>"+"<td>"+max+"</td>";
   
   codigoHTML5+="</tr>";
+//Solucion 2
+  codigoHTML7+="<tr class=tb2>";
+  codigoHTML7+="<td>"+"El mejor caso"+"</td>"+"<td>"+posmin2+"</td>"+"<td>"+min2+"</td>";
+  codigoHTML7+="</tr>";
+  codigoHTML7+="<tr class=tb2>";
+  codigoHTML7+="<td>"+"El peor caso"+"</td>"+"<td>"+posmax2+"</td>"+"<td>"+max2+"</td>";
+  
+  codigoHTML7+="</tr>";
 
 
 
@@ -94,5 +122,7 @@ document.getElementById("tbodyid2").innerHTML = codigoHTML2;
 document.getElementById("tbodyid3").innerHTML = codigoHTML3;
 document.getElementById("tbodyid4").innerHTML = codigoHTML4;
 document.getElementById("tbodyid5").innerHTML = codigoHTML5;
+document.getElementById("tbodyid6").innerHTML = codigoHTML6;
+document.getElementById("tbodyid7").innerHTML = codigoHTML7;
 
 }

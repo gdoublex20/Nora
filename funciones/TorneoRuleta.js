@@ -1,5 +1,9 @@
     var boton = document.getElementById('btnid');
+    var boton2 = document.getElementById('btnUnPunto');
+    var boton3 = document.getElementById('btnDosPuntos');
     boton.addEventListener('click', resolver);
+    boton2.addEventListener('click', HandlerUnPunto);
+    boton3.addEventListener('click', HandlerDosPuntos);
     const fincas=[2,2.4,3,4,4.4];
     //para guardar los 1 y 0
     var muestra= [];
@@ -155,11 +159,18 @@
 
         function resolver(){
             TorneoRuleta();
-            CruzaUnPunto();
-            CruzaDosPuntos();
-            Mutacion();
             tabla();
         }
 
+        function HandlerUnPunto(){
+            CruzaUnPunto();
+            Mutacion();
+            tabla();
+        }
+        function HandlerDosPuntos(){
+            CruzaDosPuntos();
+            Mutacion2();
+            tabla();
+        }
 
          

@@ -24,14 +24,30 @@
 			<article>
 				<div class="wrap">
 					<ul class="tabs">
-						<li><a href="#tab1">Solucion</a></li>
+						<li><a href="#tab1">Solucion Un P</a></li>
+						<li><a href="#tab0">Solucion Dos P</a></li>
 						<li><a href="#tab2">Torneo/Ruleta</a></li>
 						<li><a href="#tab3">Cruze un punto</a></li>
 						<li><a href="#tab4">Cruze dos puntos</a></li>
-						<li><a href="#tab5">Mutacion</a></li>
+						<li><a href="#tab5">Mutacion un Punto</a></li>
+						<li><a href="#tab6">Mutacion Dos Puntos</a></li>
 					</ul>
 			
 					<div class="secciones">
+						<article id="tab0">
+							<p id="TS">
+								<table >
+									<tr class="tb2">
+										<td>analisis</td><td>cromosoma</td><td>valor</td>
+									</tr>
+									<tbody id="tbodyid7">
+
+									</tbody>
+
+								</table>
+							</p>
+						</article>
+
 						<article id="tab1">
 							<p id="TS">
 								<table >
@@ -127,6 +143,24 @@
 								</table>
 							</p>
 						</article>
+						<article id="tab6">
+
+							<p id="TS"> 
+									<table >
+										<tr>
+											<td colspan=1 class="si"></td>
+											<td >poblacion</td>
+											<td >mutacion</td>
+											<td >punto de mutacion</td>
+											<td  >resultado</td>
+										</tr>
+										<tbody id="tbodyid6">
+	
+	
+										</tbody>
+									</table>
+								</p>
+							</article>
 					</div>
 				</div>
 
@@ -144,13 +178,6 @@
 						<input type="text" name="numero" placeholder="Coste finca 4">
 						<input type="text" name="numero" placeholder="Coste finca 5">
 						<!--aqui voy a crear una clase padre para usar flexbox en los botones tipo radio-->
-						<div class="calculos">
-							<input type="radio" name="calculos" id="poblacionid" value="poblacion">
-							<label class="label-radio hombre" for="poblacionid">Usar cruze un punto</label>
-		
-							<input type="radio" name="calculos" id="mutacionid" value="mutacion">
-							<label class="label-radio mutacion" for="mutacionid">Usar cruze dos puntos</label>
-						</div>
 		
 						<!--tabla desordenada-->
 						<ul class="error" id="errorid">
@@ -159,7 +186,10 @@
 					</div>
 		
 					<!--el boton-->
-					<input type="button" class="btn" id="btnid" value="resolver">
+
+					<input type="button" class="btn" id="btnid" value="Generar Tabla">
+					<input type="button" class="btn" id="btnUnPunto" value="Cruza de un punto">
+					<input type="button" class="btn" id="btnDosPuntos" value="Cruza de dos puntos">
 				</form>
 				
 			</div>
@@ -181,5 +211,7 @@
 	<script src="funciones/CruzaDosPuntos.js"></script>
 	<script src="funciones/mutacion.js"></script>
 	<script src="funciones/final.js"></script>
+	<script src="funciones/final2.js"></script>
+	<script src="funciones/mutacion2.js"></script>
 </body>
 </html>
