@@ -4,7 +4,9 @@
     boton.addEventListener('click', resolver);
     boton2.addEventListener('click', HandlerUnPunto);
     boton3.addEventListener('click', HandlerDosPuntos);
-    const fincas=[2,2.4,3,4,4.4];
+
+    //var fincas=[2,2.4,3,4,4.4];
+    var fincas=[];
     //para guardar los 1 y 0
     var muestra= [];
     //invitados aleatorios
@@ -44,6 +46,12 @@
     var seleccionados=[];
 
     function TorneoRuleta() {
+        //dar valor a las fincas
+        fincas=[];
+        for(var i=0;i<5;i++){
+            fincas[i]=parseFloat(document.getElementById("n"+i).value);
+        }
+        console.log(fincas);
         y=0;
         //numero filas--SE OCUPA EJECUTAR
         var numFilas=parseInt(document.getElementById("numeroid").value); 
